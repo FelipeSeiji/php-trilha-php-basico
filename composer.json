@@ -1,0 +1,15 @@
+{
+    "name": "felipeseiji/php-trilha-php-basico",
+    "authors": [
+        {
+            "name": "Felipe Seiji",
+            "email": "fenishina@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {}
+}
