@@ -18,5 +18,5 @@ require ROOT_PATH . '/Controller/API/UserController.php';
 
 $user = new UserController();
 
-$methodname = $url[4] . 'Action';
-$user -> {$methodName}();
+$methodName = $url[4] . 'Action';
+$user->{$methodName}();
