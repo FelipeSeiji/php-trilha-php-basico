@@ -1,0 +1,22 @@
+<?php
+require __DIR__ . '/Config/config.php';
+
+$url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$url = explode( '/', $url);
+
+if((isset($url[1]) && $url[1] != 'api') || (isset($url[2]) && $url[2] != 'v1'))
+{
+    header("HTTP/1.0 404 Not Found");
+    exit();
+} else if ((isset($url[3]) && $url[3] != 'users') || !isset($url[4]))
+{
+    header("HTTP/1.0 404 Not Found");
+    exit();
+}
+
+require ROOT_PATH . '/Controller/API/UserController.php';
+
+$user = new UserController();
+
+$methodname = $url[4] . 'Action';
+$user -> {$methodName}();
